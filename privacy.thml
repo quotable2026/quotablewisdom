@@ -1,0 +1,106 @@
+QUOTABLE WISDOM
+Privacy Policy
+Jireh Holdings LLC  ·  North Platte, Nebraska  ·  Effective January 29, 2026
+We built Quotable Wisdom to inspire, not to harvest your data. This policy explains plainly what we collect, where it lives, and how you can have it deleted.
+01
+What We Collect
+Sign in with Apple
+When you back up your account using Sign in with Apple, we receive and store:
+	•	Your Apple ID (a unique identifier provided by Apple)
+	•	Your email address, if you choose to share it during sign-in
+Account & App Data
+The following data is stored in your account on our servers:
+	•	Founder number — your unique membership number (first 900 lifetime users)
+	•	Favorite quotes — the quotes you have saved
+	•	Reading streaks — your consecutive daily usage count and history
+	•	Badges earned and progress toward unearned badges
+	•	Subscription and purchase status (premium, lifetime, or free tier)
+Optional: Email for Updates
+If you choose to provide your email address to receive app news and new quote collections, that address is stored with EmailOctopus, our email service provider. This is entirely optional and you can unsubscribe at any time.
+Automatically Collected
+	•	Crash reports and performance data (anonymized)
+	•	General feature usage patterns (aggregate, not linked to your identity)
+	•	Device model and iOS version
+	•	Language preferences
+02
+How We Store Your Data
+Your account data is stored securely using Supabase, a third-party cloud database provider. Supabase stores data on encrypted servers following industry-standard security practices. You can review their privacy documentation at supabase.com/privacy.
+Subscription management and payment processing is handled by RevenueCat. We never see or store your payment card information — that is handled entirely by Apple.
+We do not sell, rent, or share your personal data with advertisers or other third parties.
+03
+Quote Image Creator
+When you use the Quote Image Creator feature, your selected photo is processed entirely on your device. Images you choose from your camera roll are never uploaded to, stored on, or transmitted through our servers. You are solely responsible for ensuring you have the right to use any image you select.
+By using the Quote Image Creator, you confirm you have the right to use the selected image. Quotable Wisdom is not responsible for user-generated content created with this feature.
+04
+How We Use Your Information
+	•	Provide and maintain your account and premium access
+	•	Sync your favorites, streaks, and badges across sessions and devices
+	•	Assign and display your Founder number
+	•	Send push notifications (only if you have granted permission)
+	•	Send optional email updates (only if you have provided your email)
+	•	Translate quotes into your preferred language via Google Cloud Translation
+	•	Display relevant advertisements to free-tier users via Google AdMob
+	•	Respond to support requests
+	•	Improve the app using aggregate, anonymized usage data
+05
+Push Notifications
+If you grant permission, we may send you daily quote reminders and notifications about new content and app updates. You can disable push notifications at any time in your iPhone's Settings → Notifications → Quotable Wisdom.
+06
+Children's Privacy
+Quotable Wisdom is suitable for all ages. We do not knowingly collect personal information from children under 13. Basic features of the app do not require account creation or personal information. If you believe a child has provided us personal data, please contact us and we will delete it promptly.
+07
+Your Rights & Account Deletion
+You have the right to access, correct, or delete the personal data we hold about you.
+Requesting Account Deletion
+To permanently delete your account and all associated data:
+1
+Email us at [email protected] with the subject line "Delete My Account"
+2
+Include the email address or Apple ID associated with your account
+3
+We will permanently delete your account within 30 days
+Deletion removes your Apple ID, email, favorites, streaks, Founder number, and all badges from our servers. This action is permanent and cannot be undone. Active annual subscriptions should be cancelled through the App Store before requesting deletion. Lifetime access cannot be transferred or refunded after deletion.
+Other Rights
+	•	Opt out of email communications via the unsubscribe link in any email
+	•	Opt out of personalized advertising through iOS Settings → Privacy → Tracking
+	•	Request a copy of the data we hold about you by emailing us
+08
+Third-Party Services
+Quotable Wisdom uses the following third-party services, each governed by their own privacy policies:
+SERVICE
+PURPOSE
+PRIVACY POLICY
+Apple (Sign in with Apple)
+Account authentication
+apple.com/legal/privacy
+Supabase
+Backend database & account storage
+supabase.com/privacy
+RevenueCat
+Subscription & payment management
+revenuecat.com/privacy
+Google AdMob
+Ads for free-tier users
+policies.google.com/privacy
+Google Cloud Translation
+Quote translation (premium)
+cloud.google.com/terms
+EmailOctopus
+Optional email updates
+emailoctopus.com/legal/privacy
+09
+Data Sharing
+We do not sell, trade, or rent your personal information to third parties. We may share information only:
+	•	With your explicit consent
+	•	To comply with legal obligations or a valid legal process
+	•	To protect the rights, safety, or property of Jireh Holdings LLC or our users
+	•	With the third-party services listed above, as necessary to provide app functionality
+10
+Changes to This Policy
+We may update this Privacy Policy from time to time. When we do, we will update the effective date at the top of this page. For significant changes, we will notify you via push notification or in-app message. Continued use of the app after changes are posted constitutes your acceptance of the updated policy.
+11
+Contact Us
+Questions about this policy or requests regarding your data:
+Jireh Holdings LLC
+North Platte, Nebraska, USA
+Email: [email protected]
