@@ -63,6 +63,63 @@
             color: #8B6914;
             font-size: 1.5em;
         }
+        .api-band {
+            background: #1e1e1e;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .api-band h2 {
+            color: #D4AF37;
+            font-size: 1.9em;
+            margin-bottom: 10px;
+        }
+        .api-band p {
+            color: #ccc;
+            font-size: 1.05em;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .api-stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px auto;
+            max-width: 700px;
+        }
+        .api-stat {
+            text-align: center;
+        }
+        .api-stat .num {
+            display: block;
+            font-size: 2em;
+            font-weight: 700;
+            color: #D4AF37;
+        }
+        .api-stat .lbl {
+            font-size: 0.85em;
+            color: #aaa;
+        }
+        .api-btn {
+            display: inline-block;
+            background: #D4AF37;
+            color: #1e1e1e;
+            padding: 14px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 8px;
+            font-size: 1em;
+            transition: transform 0.2s;
+        }
+        .api-btn:hover { transform: scale(1.05); }
+        .api-btn-outline {
+            background: transparent;
+            color: #D4AF37;
+            border: 2px solid #D4AF37;
+        }
+        .api-btn-outline:hover { background: rgba(212,175,55,0.1); transform: scale(1.05); }
         .footer {
             background: #f5f5f5;
             text-align: center;
@@ -86,45 +143,45 @@
 
     <div class="container">
         <h2 style="text-align: center; color: #8B6914; font-size: 2em;">Discover 240,000+ Quotes from Diverse Voices</h2>
-        
+
         <div class="features">
             <div class="feature">
                 <div style="font-size: 3em;">🎯</div>
                 <h3>Industry-First Gender Filter</h3>
                 <p>Search specifically for women's or men's voices. 1,071 quotes from extraordinary women—3X better than competitors.</p>
             </div>
-            
+
             <div class="feature">
                 <div style="font-size: 3em;">📚</div>
                 <h3>15 Curated Categories</h3>
                 <p>From Leadership & Business to Spirituality & Faith. Find the perfect quote for any moment.</p>
             </div>
-            
+
             <div class="feature">
                 <div style="font-size: 3em;">🌍</div>
                 <h3>Diverse Voices</h3>
                 <p>Wisdom from philosophers, world leaders, innovators, and changemakers across cultures.</p>
             </div>
-            
+
             <div class="feature">
                 <div style="font-size: 3em;">✨</div>
                 <h3>Beautiful Design</h3>
                 <p>Elegant typography, dark mode, customizable font sizes. Reading quotes has never looked this good.</p>
             </div>
-            
+
             <div class="feature">
                 <div style="font-size: 3em;">❤️</div>
                 <h3>Save Favorites</h3>
                 <p>Build your personal collection of quotes that resonate with you.</p>
             </div>
-            
+
             <div class="feature">
                 <div style="font-size: 3em;">💰</div>
                 <h3>Affordable Premium</h3>
                 <p>Start free with 500 quotes. Upgrade for just $6.99/year or $19.99 lifetime.</p>
             </div>
         </div>
-        
+
         <div style="text-align: center; margin: 60px 0;">
             <h2 style="color: #8B6914;">Featured Authors Include</h2>
             <p style="font-size: 1.1em; line-height: 1.8;">
@@ -135,13 +192,40 @@
             </p>
         </div>
     </div>
-    
+
+    <!-- Developer / API section -->
+    <div class="api-band">
+        <h2>Quotable API — For Developers</h2>
+        <p>240,000+ curated quotes via REST API. Filter by category, author, religion, language, and more. Free tier available.</p>
+        <div class="api-stats">
+            <div class="api-stat">
+                <span class="num">240k+</span>
+                <span class="lbl">Quotes</span>
+            </div>
+            <div class="api-stat">
+                <span class="num">15</span>
+                <span class="lbl">Categories</span>
+            </div>
+            <div class="api-stat">
+                <span class="num">7</span>
+                <span class="lbl">Faith Traditions</span>
+            </div>
+            <div class="api-stat">
+                <span class="num">REST</span>
+                <span class="lbl">JSON API</span>
+            </div>
+        </div>
+        <a href="/api.html" class="api-btn">Learn More</a>
+        <a href="https://rapidapi.com/quotable2026/api/quotable-wisdom" class="api-btn api-btn-outline">Try Free on RapidAPI</a>
+    </div>
+
     <div class="footer">
         <p><strong>Quotable Wisdom</strong> by Jireh Holdings LLC | North Platte, Nebraska, USA</p>
         <p>
-            <a href="/support.html">Support</a> • 
-            <a href="/privacy.html">Privacy Policy</a> • 
-            <a href="/terms.html">Terms of Service</a>
+            <a href="/support.html">Support</a> •
+            <a href="/privacy.html">Privacy Policy</a> •
+            <a href="/terms.html">Terms of Service</a> •
+            <a href="/api.html">API</a>
         </p>
         <p style="margin-top: 20px;">
             Contact: <a href="mailto:quotable2026@gmail.com">quotable2026@gmail.com</a>
