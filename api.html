@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotable API — 240,000+ Quotes for Developers</title>
+    <meta name="description" content="240,000+ curated quotes via REST API. Filter by category, author, religion, language, and more. Free tier available on RapidAPI.">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .hero {
+            background: linear-gradient(135deg, #8B6914 0%, #D4AF37 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h1 {
+            font-size: 2.8em;
+            margin: 0;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #8B6914;
+            padding: 14px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 8px;
+            font-size: 1em;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: scale(1.05); }
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        .btn-outline:hover { background: rgba(255,255,255,0.1); transform: scale(1.05); }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        h2 {
+            color: #8B6914;
+            font-size: 1.9em;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .sub {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.05em;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .stat-box {
+            background: #fdf8ee;
+            border: 1px solid #e8d99a;
+            border-radius: 12px;
+            padding: 24px 16px;
+        }
+        .stat-box .num {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: #8B6914;
+            display: block;
+        }
+        .stat-box .label {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .use-cases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+        .use-case {
+            background: #fdf8ee;
+            border-left: 4px solid #D4AF37;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .use-case h3 {
+            color: #8B6914;
+            margin: 0 0 8px;
+        }
+        .use-case p {
+            margin: 0;
+            font-size: 0.95em;
+            color: #555;
+        }
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border-radius: 10px;
+            padding: 24px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+            margin: 20px 0;
+        }
+        .code-block .key { color: #9cdcfe; }
+        .code-block .val { color: #ce9178; }
+        .code-block .num { color: #b5cea8; }
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .plan {
+            border: 2px solid #e8d99a;
+            border-radius: 12px;
+            padding: 28px 20px;
+            text-align: center;
+        }
+        .plan.featured {
+            border-color: #D4AF37;
+            background: #fdf8ee;
+        }
+        .plan h3 {
+            color: #8B6914;
+            margin: 0 0 6px;
+            font-size: 1.2em;
+        }
+        .plan .price {
+            font-size: 2em;
+            font-weight: 700;
+            color: #333;
+        }
+        .plan .per { font-size: 0.75em; color: #888; }
+        .plan ul {
+            text-align: left;
+            padding-left: 20px;
+            margin: 16px 0 0;
+            font-size: 0.9em;
+            color: #555;
+        }
+        .plan li { margin: 6px 0; }
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin: 24px 0;
+        }
+        .filter-chip {
+            background: #fdf8ee;
+            border: 1px solid #e8d99a;
+            border-radius: 20px;
+            padding: 8px 16px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #8B6914;
+            font-weight: 500;
+        }
+        .cta-band {
+            background: linear-gradient(135deg, #8B6914 0%, #D4AF37 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .cta-band h2 { color: white; }
+        .footer {
+            background: #f5f5f5;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .footer a {
+            color: #8B6914;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+        .back-link {
+            display: inline-block;
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        .back-link:hover { color: white; }
+        .divider { border: none; border-top: 1px solid #e8d99a; margin: 50px 0; }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <a href="/" class="back-link">← Quotable Wisdom</a>
+    <h1>Quotable API</h1>
+    <p>240,000+ curated quotes. REST API. Free to start.</p>
+    <a href="https://rapidapi.com/quotable2026/api/quotable-wisdom" class="btn">Try it Free on RapidAPI</a>
+    <a href="https://quotable2026.github.io/api-docs/" class="btn btn-outline">View Full Docs</a>
+</div>
+
+<div class="container">
+
+    <div class="stats">
+        <div class="stat-box">
+            <span class="num">240k+</span>
+            <span class="label">Curated Quotes</span>
+        </div>
+        <div class="stat-box">
+            <span class="num">15</span>
+            <span class="label">Categories</span>
+        </div>
+        <div class="stat-box">
+            <span class="num">7</span>
+            <span class="label">Faith Traditions</span>
+        </div>
+        <div class="stat-box">
+            <span class="num">5+</span>
+            <span class="label">Languages</span>
+        </div>
+        <div class="stat-box">
+            <span class="num">REST</span>
+            <span class="label">JSON API</span>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <h2>Built For These Apps</h2>
+    <p class="sub">If your users need daily inspiration, your app needs the Quotable API.</p>
+
+    <div class="use-cases">
+        <div class="use-case">
+            <h3>Faith & Devotional Apps</h3>
+            <p>8,000+ faith quotes across Christianity, Islam, Judaism, Buddhism, Hinduism, Taoism. Filter by tradition.</p>
+        </div>
+        <div class="use-case">
+            <h3>Mental Health & Wellness</h3>
+            <p>Healing, resilience, hope, and grief categories. Vetted for sensitivity — not raw scraped data.</p>
+        </div>
+        <div class="use-case">
+            <h3>Productivity & Focus</h3>
+            <p>Leadership, motivation, and stoicism tags. Daily quote feature takes 10 minutes to build.</p>
+        </div>
+        <div class="use-case">
+            <h3>Education & Learning</h3>
+            <p>Filter by author, era, culture, or topic. Great for on-boarding flows, daily tips, and empty states.</p>
+        </div>
+        <div class="use-case">
+            <h3>New Tab & Browser Extensions</h3>
+            <p>A random high-grade quote every page load. Built for volume — up to 500k calls/month on Pro.</p>
+        </div>
+        <div class="use-case">
+            <h3>No-Code Platforms</h3>
+            <p>Works in Bubble, Glide, Thunkable, Adalo, Softr. Any platform that supports external REST APIs.</p>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <h2>Powerful Filters</h2>
+    <p class="sub">Every endpoint supports these parameters. Mix and match.</p>
+
+    <div class="filters-grid">
+        <div class="filter-chip">category=faith</div>
+        <div class="filter-chip">tag=healing</div>
+        <div class="filter-chip">religion=christianity</div>
+        <div class="filter-chip">author=Marcus+Aurelius</div>
+        <div class="filter-chip">gender=female</div>
+        <div class="filter-chip">language=es</div>
+        <div class="filter-chip">grade=4</div>
+        <div class="filter-chip">fame_score=80</div>
+        <div class="filter-chip">limit=10&offset=0</div>
+        <div class="filter-chip">random=true</div>
+    </div>
+
+    <hr class="divider">
+
+    <h2>Example Response</h2>
+    <p class="sub">Clean JSON. One endpoint call is all it takes.</p>
+
+    <div class="code-block">
+GET /quotes/random?category=faith&religion=christianity<br><br>
+{<br>
+&nbsp;&nbsp;<span class="key">"id"</span>: <span class="val">"q_83920"</span>,<br>
+&nbsp;&nbsp;<span class="key">"text"</span>: <span class="val">"Faith is taking the first step even when you don't see the whole staircase."</span>,<br>
+&nbsp;&nbsp;<span class="key">"author"</span>: <span class="val">"Martin Luther King Jr."</span>,<br>
+&nbsp;&nbsp;<span class="key">"category"</span>: <span class="val">"faith"</span>,<br>
+&nbsp;&nbsp;<span class="key">"tags"</span>: [<span class="val">"courage"</span>, <span class="val">"faith"</span>, <span class="val">"hope"</span>],<br>
+&nbsp;&nbsp;<span class="key">"religion"</span>: <span class="val">"christianity"</span>,<br>
+&nbsp;&nbsp;<span class="key">"grade"</span>: <span class="num">5</span>,<br>
+&nbsp;&nbsp;<span class="key">"fame_score"</span>: <span class="num">98</span><br>
+}
+    </div>
+
+    <hr class="divider">
+
+    <h2>Pricing</h2>
+    <p class="sub">Free to evaluate. Scales with your usage.</p>
+
+    <div class="pricing">
+        <div class="plan">
+            <h3>Free</h3>
+            <div class="price">$0<span class="per">/mo</span></div>
+            <ul>
+                <li>100 requests/month</li>
+                <li>All endpoints</li>
+                <li>All filters</li>
+                <li>No credit card</li>
+            </ul>
+        </div>
+        <div class="plan featured">
+            <h3>Basic</h3>
+            <div class="price">$9<span class="per">/mo</span></div>
+            <ul>
+                <li>10,000 requests/month</li>
+                <li>All endpoints &amp; filters</li>
+                <li>JSON + metadata</li>
+                <li>RapidAPI dashboard</li>
+            </ul>
+        </div>
+        <div class="plan">
+            <h3>Pro</h3>
+            <div class="price">$29<span class="per">/mo</span></div>
+            <ul>
+                <li>500,000 requests/month</li>
+                <li>Priority support</li>
+                <li>Bulk endpoints</li>
+                <li>Custom arrangements</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<div class="cta-band">
+    <h2>Ready to add quotes to your app?</h2>
+    <p style="font-size: 1.1em; margin-bottom: 30px;">Free tier. No credit card. Live sandbox on RapidAPI.</p>
+    <a href="https://rapidapi.com/quotable2026/api/quotable-wisdom" class="btn">Get Started Free</a>
+    <a href="https://quotable2026.github.io/api-docs/" class="btn btn-outline">Read the Docs</a>
+    <p style="margin-top: 24px; font-size: 0.9em; opacity: 0.85;">
+        Questions? <a href="mailto:quotable2026@gmail.com" style="color: white;">quotable2026@gmail.com</a>
+    </p>
+</div>
+
+<div class="footer">
+    <p><strong>Quotable Wisdom</strong> by Jireh Holdings LLC | North Platte, Nebraska, USA</p>
+    <p>
+        <a href="/">Home</a> •
+        <a href="/support.html">Support</a> •
+        <a href="/privacy.html">Privacy Policy</a> •
+        <a href="/terms.html">Terms of Service</a>
+    </p>
+    <p style="margin-top: 20px;">
+        <a href="https://apps.apple.com/us/app/quotable-wisdom/id6758270791">App Store</a> •
+        <a href="https://play.google.com/store/apps/details?id=com.quotablewisdom.app&hl=en_US">Google Play</a>
+    </p>
+</div>
+
+</body>
+</html>
